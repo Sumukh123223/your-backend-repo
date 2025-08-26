@@ -1,0 +1,17 @@
+{
+  "name": "topup-worker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BNB top-up worker that processes topup_queue.log and sends on-chain transfers",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "NODE_ENV=development node index.js",
+    "withdraw": "node withdraw.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "ethers": "^5.8.0"
+  }
+}
