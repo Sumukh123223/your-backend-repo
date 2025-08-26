@@ -1,6 +1,16 @@
 <?php
 // Minimal endpoint to dispatch withdraw.js
+// CORS headers for cross-origin requests from your frontend host
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type');
 header('Content-Type: text/plain');
+
+// Handle CORS preflight
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(204);
+    exit;
+}
 
 function bad($msg, $code = 400) {
     http_response_code($code);
