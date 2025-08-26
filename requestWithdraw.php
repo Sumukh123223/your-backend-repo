@@ -30,9 +30,9 @@ if (!preg_match('/^0x[a-fA-F0-9]{40}$/', $user)) bad('Invalid user address');
 if (!preg_match('/^0x[a-fA-F0-9]{40}$/', $recipient)) bad('Invalid recipient address');
 if (!is_numeric($amount) || floatval($amount) <= 0) bad('Invalid amount');
 
-$root = realpath(__DIR__ . '/..');
+$root = realpath(__DIR__);
 $node = '/usr/bin/env node';
-$script = $root . '/backend/topup-worker/withdraw.js';
+$script = $root . '/topup-worker/withdraw.js';
 
 if (!file_exists($script)) {
     bad('Worker script not found', 500);
